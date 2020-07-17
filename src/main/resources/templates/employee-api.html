@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Api Employee</title>
+
+    <style>
+        .api-container{
+            padding: 10px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}">IsilEmployee</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Add </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/employee/list}">list </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/employee/employee-api}"> <span class="badge badge-dark">Api</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <div class=" w-75 m-auto p-5 row" >
+
+        <div class="col-md-12 col-lg-4">
+            <div class="api-container">
+            <h2>GET</h2>
+            <div>
+                <p><strong class="badge badge-success">All</strong></p>
+                <p>http://localhost:8080/api/employee</p>
+            </div>
+            <div>
+                <p><strong class="badge badge-success">By Id</strong></p>
+                <p>http://localhost:8080/api/employee/#id</p>
+            </div>
+            </div>
+            <div class="api-container">
+                <h3>Delete</h3>
+                <div>
+                    <p><strong class="badge badge-danger">Delete</strong></p>
+                    <p>http://localhost:8080/api/employee/#id</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 api-container">
+            <h2>POST</h2>
+            <strong><p class="badge badge-info">Save</p></strong>
+            <p>http://localhost:8080/api/employee</p>
+            <pre>
+
+            {
+                "name": "usuario",
+                "surnames": "usuario apellidos",
+                "dni": "12345678",
+                "cellphone": 953096666,
+                "state": 1,
+                "address": {
+                    "country": "Perú",
+                    "city": "Lima",
+                    "street": "SIN NUMERO, LIMA"
+                }
+            }
+            </pre>
+        </div>
+
+        <div class="col-md-6 col-lg-4 api-container">
+            <h2>PUT</h2>
+            <strong><p class="badge badge-warning">Update</p></strong>
+            <p>http://localhost:8080/api/employee/#id</p>
+            <pre>
+
+             {
+                "name": "cambio de nombre",
+                "surnames": "cambio de apellidos",
+                "dni": "12345678",
+                "cellphone": 953096666,
+                "state": 2,
+                "address": {
+                    "country": "cambio de pais",
+                    "city": "cambio de ciudad",
+                    "street": "SIN NUMERO, LIMA"
+                }
+            }
+
+            </pre>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>
